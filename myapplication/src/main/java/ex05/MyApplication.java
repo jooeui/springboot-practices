@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import ex05.component.HelloWorldRunner;
 import ex05.component.MyComponent;
 
 /**
@@ -26,21 +25,21 @@ public class MyApplication {
 		// return new HelloWorldRunner();
 		
 		// 2. Anonymouse Class 사용하는 방법 
-//		return new ApplicationRunner() {
-//			@Autowired
-//			private MyComponent myComponent;
-//			
-//			@Override
-//			public void run(ApplicationArguments args) throws Exception {
-//				myComponent.printHello();
-//			}
-//		};
+		return new ApplicationRunner() {
+			@Autowired
+			private MyComponent myComponent;
+			
+			@Override
+			public void run(ApplicationArguments args) throws Exception {
+				myComponent.printHello();
+			}
+		};
 		
 		// 3. 함수형(람다 표현식)
 //		return (ApplicationArguments args) -> {
-		return (args) -> {
-			System.out.println("Hello World");
-		};
+//		return (args) -> {
+//			System.out.println("Hello World");
+//		};
 	}
 	
 	public static void main(String[] args) {
