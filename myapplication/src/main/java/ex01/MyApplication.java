@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MyApplication {
-	
 	@Bean
 	public MyComponent myComponent() {
 		return new MyComponent();
@@ -17,5 +16,4 @@ public class MyApplication {
 		try(ConfigurableApplicationContext c = SpringApplication.run(MyApplication.class, args)){
 		}
 	}
-
 }
